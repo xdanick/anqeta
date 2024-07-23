@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анкета</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>АНКЕТА ОБ АКТИВАХ И ОБЯЗАТЕЛЬСТВАХ ФИЗИЧЕСКОГО ЛИЦА</h1>
+        <form id="surveyForm" enctype="multipart/form-data" method="POST" action="/submit">
+            <!-- Ваши поля формы -->
+            <div class="form-group">
+                <label for="fio">1.1 Укажите свои ФИО (полностью):</label>
+                <input type="text" id="fio" name="fio" required>
+            </div>
+            <div class="form-group">
+                <label for="iin">1.2 Укажите свой ИИН:</label>
+                <input type="text" id="iin" name="iin" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">1.3 Укажите свой номер телефона:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="email">1.4 Укажите свою электронную почту:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label>1.5 Являетесь ли Вы резидентом РК?</label>
+                <div>
+                    <input type="radio" id="resident-yes" name="resident" value="yes" required>
+                    <label for="resident-yes">Да</label>
+                </div>
+                <div>
+                    <input type="radio" id="resident-no" name="resident" value="no" required>
+                    <label for="resident-no">Нет</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="country">1.6 Если ответ на вопрос 1.5 «Нет», то укажите страну резидентства:</label>
+                <input type="text" id="country" name="country">
+            </div>
+            <div class="form-group">
+                <label>2.1.1 Имеется ли у Вас недвижимое имущество зарегистрированное в иностранном государстве?</label>
+                <div>
+                    <input type="radio" id="property-yes" name="property" value="yes" required>
+                    <label for="property-yes">Да</label>
+                </div>
+                <div>
+                    <input type="radio" id="property-no" name="property" value="no" required>
+                    <label for="property-no">Нет</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="property-type">2.1.2 Укажите вид недвижимого имущества зарегистрированного в иностранном государстве:</label>
+                <textarea id="property-type" name="property-type"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="property-country">2.1.3 Укажите страну регистрации недвижимого имущества:</label>
+                <textarea id="property-country" name="property-country"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="property-id">2.1.4 Укажите идентификационный (кадастровый) номер недвижимого имущества на основании правоустанавливающих документов:</label>
+                <input type="text" id="property-id" name="property-id">
+            </div>
+            <div class="form-group">
+                <label for="property-address">2.1.5 Укажите место нахождения (адрес) недвижимого имущества зарегистрированного за пределами Республики Казахстан:</label>
+                <textarea id="property-address" name="property-address"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="property-documents">2.1.6 Приложите копии документов подтверждающих право собственности:</label>
+                <input type="file" id="property-documents" name="property-documents" multiple>
+            </div>
+            <div class="form-group">
+                <button type="submit">Отправить</button>
+            </div>
+        </form>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
